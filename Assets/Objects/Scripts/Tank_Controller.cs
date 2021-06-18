@@ -28,8 +28,9 @@ namespace TankSpace
         [Header("Tank Shell")]
         public GameObject shell; //game object for the shell instantiation 
         private Rigidbody srb; //stores the shell rigid body
+        [SerializeField]
         private Transform firingZone; //the spot from which the bullet comes from
-        private static float shellTimer; //decides how long the bullet has till its destroyed
+        private static float shellTimer = 2; //decides how long the bullet has till its destroyed
 
         [Header("Tank Stats")]
         private float shotForce = 200f;
@@ -91,6 +92,7 @@ namespace TankSpace
 
         public void Shoot(float _shotforce)
         {
+            Debug.Log("Creating Bullet");
             //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
             Vector3 shotDir = firingZone.forward * shotForce;
             //spawn the bullet
@@ -105,6 +107,7 @@ namespace TankSpace
             srb.AddForce(shotDir);
             //destroy the bullet after a desired time
             Destroy(shellInstance, shellTimer);
+            Debug.Log("Bullet Fired");
         }
 
         public void TakeDamage(float damage, GameObject instigator)

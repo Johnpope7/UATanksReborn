@@ -73,6 +73,7 @@ namespace TankSpace
             }
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                Debug.Log("Firing");
                 controller.Shoot(controller.GetShotForce);
             }
 

@@ -430,6 +430,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164494156946566833}
+  - component: {fileID: 2726159578665775627}
+  - component: {fileID: 1007407944}
+  - component: {fileID: 1007407942}
+  - component: {fileID: 1007407945}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -444,7 +448,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4913655709672648093}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.2895664, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
@@ -455,6 +459,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2726159578665775627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 503.90997, y: 390.27457, z: 568.66705}
+  m_Center: {x: 0, y: 226.4302, z: -37.40015}
+--- !u!54 &1007407944
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1007407942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ead57f5d0f8d3440856226818d69ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankSpeed: 15
+  tankRotationSpeed: 100
+  turretTransform: {fileID: 409401110439938547}
+  turretLagSpeed: 7
+  reticleTransform: {fileID: -8679921383154817045, guid: 6e5aabdce0be12d46a73df6c7cb53437, type: 3}
+  shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
+  firingZone: {fileID: 9044039701618893532}
+  tankDamage: 25
+--- !u!114 &1007407945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43fd17eea3332a4880788fe53053c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
 --- !u!1 &5592387151819456919
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,9 +611,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9044039701618893532}
+  - component: {fileID: 7488777474152505478}
+  - component: {fileID: 5737275032739794964}
+  - component: {fileID: 4401832532104265449}
   m_Layer: 0
-  m_Name: FiringZone
-  m_TagString: Untagged
+  m_Name: firingZone
+  m_TagString: firingZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,12 +629,61 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5699879330437741271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -111.35723, y: -65.02898, z: 343}
+  m_LocalPosition: {x: 3, y: 6, z: 343}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 7574613892501966901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &7488777474152505478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699879330437741271}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5737275032739794964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699879330437741271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43fd17eea3332a4880788fe53053c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+--- !u!114 &4401832532104265449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699879330437741271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ead57f5d0f8d3440856226818d69ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankSpeed: 15
+  tankRotationSpeed: 100
+  turretTransform: {fileID: 0}
+  turretLagSpeed: 7
+  reticleTransform: {fileID: 0}
+  shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
+  firingZone: {fileID: 9044039701618893532}
+  tankDamage: 25
 --- !u!1 &6151149604422610314
 GameObject:
   m_ObjectHideFlags: 0
