@@ -30,10 +30,15 @@ namespace TankSpace
         private Rigidbody srb; //stores the shell rigid body
         [SerializeField]
         private Transform firingZone; //the spot from which the bullet comes from
-        private static float shellTimer = 2; //decides how long the bullet has till its destroyed
+        private static float shellTimeout = 1; //decides how long the bullet has till its destroyed
+        [SerializeField]
+        private float shotTimerDelay;
+        [SerializeField]
+        private float cooldownTimer;
 
         [Header("Tank Stats")]
-        private float shotForce = 200f;
+        [SerializeField]
+        private float shotForce = 2000f;
         [SerializeField]
         private float tankDamage = 25f;
 
@@ -55,6 +60,7 @@ namespace TankSpace
                 HandleMovement();
                 HandleTurret();
                 HandleReticle();
+                cooldownTimer -= Time.deltaTime;
 
             }
         }
@@ -92,22 +98,26 @@ namespace TankSpace
 
         public void Shoot(float _shotforce)
         {
-            Debug.Log("Creating Bullet");
-            //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
-            Vector3 shotDir = firingZone.forward * shotForce;
-            //spawn the bullet
-            GameObject shellInstance = Instantiate(shell, firingZone.position, firingZone.rotation);
-            //get the instigator
-            shellInstance.GetComponent<Shell_Bullet>().instigator = gameObject;
-            //get the shellDamage variable
-            shellInstance.GetComponent<Shell_Bullet>().SetShellDamage(tankDamage);
-            //get the shell rigid body to apply force
-            srb = shellInstance.GetComponent<Rigidbody>();
-            //apply the shotforce variable to the rigid body to make the bullet move
-            srb.AddForce(shotDir);
-            //destroy the bullet after a desired time
-            Destroy(shellInstance, shellTimer);
-            Debug.Log("Bullet Fired");
+            if (cooldownTimer <= 0)
+            {
+                //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
+                Vector3 shotDir = firingZone.forward * shotForce;
+                //spawn the bullet
+                GameObject shellInstance = Instantiate(shell, firingZone.position, firingZone.rotation);
+                //change bullet tag
+                shellInstance.gameObject.layer = gameObject.layer;
+                //get the instigator
+                shellInstance.GetComponent<Shell_Bullet>().instigator = gameObject;
+                //get the shellDamage variable
+                shellInstance.GetComponent<Shell_Bullet>().SetShellDamage(tankDamage);
+                //get the shell rigid body to apply force
+                srb = shellInstance.GetComponent<Rigidbody>();
+                //apply the shotforce variable to the rigid body to make the bullet move
+                srb.AddForce(shotDir);
+                //destroy the bullet after a desired time
+                Destroy(shellInstance, shellTimeout);
+                cooldownTimer = shotTimerDelay;
+            }
         }
 
         public void TakeDamage(float damage, GameObject instigator)

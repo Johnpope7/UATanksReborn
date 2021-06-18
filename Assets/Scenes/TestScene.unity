@@ -4105,6 +4105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reticle_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e5aabdce0be12d46a73df6c7cb53437, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5aabdce0be12d46a73df6c7cb53437, type: 3}
 --- !u!1001 &627772551
@@ -4114,6 +4118,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 304565647}
     m_Modifications:
+    - target: {fileID: 1007407942, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
+      propertyPath: cooldownTimer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007407942, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
+      propertyPath: shotTimerDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1007407942, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
       propertyPath: reticleTransform
       value: 
@@ -4166,18 +4178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4401832532104265449, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
-      propertyPath: reticleTransform
-      value: 
-      objectReference: {fileID: 142562704}
     - target: {fileID: 4913655709672648093, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
       propertyPath: m_Name
       value: Tank
       objectReference: {fileID: 0}
-    - target: {fileID: 5737275032739794964, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 963194227}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
 --- !u!1 &641878789
