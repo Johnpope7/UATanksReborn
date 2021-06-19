@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InputSpace;
+using BulletSpace;
 
 
-
+namespace TankSpace
+{
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Tank_Input))]
     public class Tank_Controller : MonoBehaviour
@@ -154,3 +155,4 @@ using InputSpace;
         #endregion
 
     }
+}

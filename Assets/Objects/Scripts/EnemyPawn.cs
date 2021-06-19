@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using BulletSpace;
 
 
+namespace EnemySpace
+{
     public class EnemyPawn : MonoBehaviour
     {
         #region Variables
@@ -139,5 +142,6 @@ using UnityEngine.AI;
         }
         #endregion
     }
+}
 
 
