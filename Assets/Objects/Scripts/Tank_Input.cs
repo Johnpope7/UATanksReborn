@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace TankSpace
 {
-
     public class Tank_Input : MonoBehaviour
     {
         [Header("Input Properties")]
@@ -85,5 +85,4 @@ namespace TankSpace
         }
         #endregion
     }
-
 }

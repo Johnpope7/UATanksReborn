@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6044783714165334943}
   - component: {fileID: 5188795941275501006}
   - component: {fileID: 219162389801184301}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 9035341365395698521}
   - component: {fileID: 1307496153507968140}
   - component: {fileID: 2112649228988157135}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Turret_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3fbcf01a08c3514ca07467d23dce8bc, type: 2}
+  - {fileID: 2100000, guid: 70a31b92a5e869844a1a7fb0ceaea6cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409401110439938547}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Turret_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3926331076336728937}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: R_Tracks_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 2566209213623291295}
   - component: {fileID: 5972908891002434688}
   - component: {fileID: 6386956532234128542}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Wheels 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 5273759607972276695}
   - component: {fileID: 7689886254403199570}
   - component: {fileID: 8387856255745923736}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Tracks 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 900544717671218597}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: L_Tracks_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,9 +432,12 @@ GameObject:
   - component: {fileID: 1164494156946566833}
   - component: {fileID: 2726159578665775627}
   - component: {fileID: 1007407944}
-  m_Layer: 3
-  m_Name: Inky
-  m_TagString: Player
+  - component: {fileID: 8025282296522411945}
+  - component: {fileID: 813135663079197013}
+  - component: {fileID: 496238466383196864}
+  m_Layer: 8
+  m_Name: EnemyTest
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +489,83 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &8025282296522411945
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 10
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &813135663079197013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8a52993a218bf4e95a131a6d6c8c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 141
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 4d1b9f732e975da4bbabe23e9883b090, type: 2}
+--- !u!114 &496238466383196864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913655709672648093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1a1b4e98737814abb68301ebecc204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  player: {fileID: 0}
+  isGround:
+    serializedVersion: 2
+    m_Bits: 128
+  isPlayer:
+    serializedVersion: 2
+    m_Bits: 8
+  shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
+  firingZone: {fileID: 9044039701618893532}
+  shotTimerDelay: 3
+  cooldownTimer: 3
+  shotForce: 2000
+  tankDamage: 25
 --- !u!1 &5592387151819456919
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +577,7 @@ GameObject:
   - component: {fileID: 7612605867527059632}
   - component: {fileID: 2991042895084653044}
   - component: {fileID: 4024018112596694484}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Tracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9044039701618893532}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: firingZone
   m_TagString: firingZone
   m_Icon: {fileID: 0}
@@ -608,7 +688,7 @@ GameObject:
   - component: {fileID: 4863606738362260151}
   - component: {fileID: 6920535280810104605}
   - component: {fileID: 7457555733476402135}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +736,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3fbcf01a08c3514ca07467d23dce8bc, type: 2}
+  - {fileID: 2100000, guid: 70a31b92a5e869844a1a7fb0ceaea6cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -689,7 +769,7 @@ GameObject:
   - component: {fileID: 6468983229713432570}
   - component: {fileID: 2626990920969331539}
   - component: {fileID: 7687172884074481986}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Turret_Pivot_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +850,7 @@ GameObject:
   - component: {fileID: 7574613892501966901}
   - component: {fileID: 2195414264234724349}
   - component: {fileID: 2338745169516238932}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Gun_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}

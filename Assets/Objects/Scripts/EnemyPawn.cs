@@ -5,14 +5,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using BulletSpace;
 
-
 namespace EnemySpace
 {
     public class EnemyPawn : MonoBehaviour
     {
         #region Variables
         [Header("Basic Nav Properties")]
+        [SerializeField]
         private NavMeshAgent agent;
+        [SerializeField]
         private Transform player;
         public LayerMask isGround, isPlayer;
 
@@ -52,7 +53,7 @@ namespace EnemySpace
         // Start is called before the first frame update
         private void Awake()
         {
-            player = GameObject.Find("Tank").transform;
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
             agent = GetComponent<NavMeshAgent>();
         }
         void Start()
@@ -97,23 +98,7 @@ namespace EnemySpace
 
             if (!alreadyAttacked)
             {
-                //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
-                Vector3 shotDir = firingZone.forward * shotForce;
-                //spawn the bullet
-                GameObject shellInstance = Instantiate(shell, firingZone.position, firingZone.rotation);
-                //change bullet tag
-                shellInstance.gameObject.layer = gameObject.layer;
-                //get the instigator
-                shellInstance.GetComponent<Shell_Bullet>().instigator = gameObject;
-                //get the shellDamage variable
-                shellInstance.GetComponent<Shell_Bullet>().SetShellDamage(tankDamage);
-                //get the shell rigid body to apply force
-                srb = shellInstance.GetComponent<Rigidbody>();
-                //apply the shotforce variable to the rigid body to make the bullet move
-                srb.AddForce(shotDir);
-                //destroy the bullet after a desired time
-                Destroy(shellInstance, shellTimeout);
-                cooldownTimer = shotTimerDelay;
+                Shoot(shotForce);
 
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -139,6 +124,38 @@ namespace EnemySpace
         public void TakeDamage(float damage, GameObject instigator)
         {
             Debug.Log("Took Damage");
+        }
+
+        public void Shoot(float _shotforce)
+        {
+            if (cooldownTimer <= 0)
+            {
+                //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
+                Vector3 shotDir = firingZone.forward * shotForce;
+                //spawn the bullet
+                GameObject shellInstance = Instantiate(shell, firingZone.position, firingZone.rotation);
+                //change bullet tag
+                shellInstance.gameObject.layer = gameObject.layer;
+                //get the instigator
+                shellInstance.GetComponent<Shell_Bullet>().instigator = gameObject;
+                //get the shellDamage variable
+                shellInstance.GetComponent<Shell_Bullet>().SetShellDamage(tankDamage);
+                //get the shell rigid body to apply force
+                srb = shellInstance.GetComponent<Rigidbody>();
+                //apply the shotforce variable to the rigid body to make the bullet move
+                srb.AddForce(shotDir);
+                //destroy the bullet after a desired time
+                Destroy(shellInstance, shellTimeout);
+                cooldownTimer = shotTimerDelay;
+            }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, sightRange);
         }
         #endregion
     }
