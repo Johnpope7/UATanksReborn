@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TankSpace
+namespace BulletSpace
 {
     public class Shell_Bullet : MonoBehaviour
     {

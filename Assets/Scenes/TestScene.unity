@@ -4130,6 +4130,10 @@ PrefabInstance:
       propertyPath: reticleTransform
       value: 
       objectReference: {fileID: 142562704}
+    - target: {fileID: 1007407944, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1007407945, guid: 5314bc6dd16ebf44c816de5a3adbbb27, type: 3}
       propertyPath: camera
       value: 
@@ -4764,7 +4768,7 @@ GameObject:
   - component: {fileID: 745405096}
   - component: {fileID: 745405095}
   - component: {fileID: 745405094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8383,6 +8387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471097883}
+  - component: {fileID: 1471097884}
   m_Layer: 0
   m_Name: GEO_GRP
   m_TagString: Untagged
@@ -8520,6 +8525,17 @@ Transform:
   m_Father: {fileID: 304565647}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!154 &1471097884
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471097882}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1 &1499248447
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
+//credits to Indie Pixel for the tutorial on this script
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InputSpace;
 
 
-namespace TankSpace
-{
+
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Tank_Input))]
     public class Tank_Controller : MonoBehaviour
@@ -41,6 +42,7 @@ namespace TankSpace
         private float shotForce = 2000f;
         [SerializeField]
         private float tankDamage = 25f;
+        private float playerHealth;
 
         #endregion
 
@@ -152,4 +154,3 @@ namespace TankSpace
         #endregion
 
     }
-}
