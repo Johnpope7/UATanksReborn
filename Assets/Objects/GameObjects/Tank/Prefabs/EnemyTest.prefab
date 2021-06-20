@@ -539,7 +539,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4d1b9f732e975da4bbabe23e9883b090, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &496238466383196864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +560,8 @@ MonoBehaviour:
   isPlayer:
     serializedVersion: 2
     m_Bits: 8
+  sightRange: 10
+  attackRange: 5
   shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
   firingZone: {fileID: 9044039701618893532}
   shotTimerDelay: 3

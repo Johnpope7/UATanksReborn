@@ -27,6 +27,7 @@ namespace EnemySpace
         private bool alreadyAttacked;
 
         [Header("State Properties")]
+        [SerializeField]
         private float sightRange, attackRange;
         private bool playerInSightRange, playerInAttackRange;
 
@@ -79,15 +80,18 @@ namespace EnemySpace
             if (!walkPointSet) SearchWalkPoint();
 
             if (walkPointSet)
-                agent.SetDestination(walkPoint);
+            agent.SetDestination(walkPoint);
+            Debug.Log("Patrolling");
 
             Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
             if (distanceToWalkPoint.magnitude < 1f)
                 walkPointSet = false;
+            Debug.Log("walkPointSet to false");
         }
         protected virtual void ChasePlayer()
         {
+            Debug.Log("Chasing");
             agent.SetDestination(player.position);
         }
         protected virtual void AttackPlayer()
@@ -95,11 +99,11 @@ namespace EnemySpace
             agent.SetDestination(transform.position);
 
             transform.LookAt(player);
-
+            Debug.Log("Looked at Player");
             if (!alreadyAttacked)
             {
                 Shoot(shotForce);
-
+                Debug.Log("Attacking");
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
@@ -107,18 +111,21 @@ namespace EnemySpace
 
         protected virtual void ResetAttack()
         {
+            Debug.Log("Attack Reset");
             alreadyAttacked = false;
         }
 
         protected virtual void SearchWalkPoint()
         {
+            Debug.Log("Searching Walkpoint");
             float randomZ = Random.Range(-walkPointRange, walkPointRange);
             float randomX = Random.Range(-walkPointRange, walkPointRange);
-
+            
             walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
             if (Physics.Raycast(walkPoint, -transform.up, 2f, isGround))
                 walkPointSet = true;
+            Debug.Log("walkPoint Found");
         }
 
         public void TakeDamage(float damage, GameObject instigator)
