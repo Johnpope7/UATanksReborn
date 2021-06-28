@@ -16,6 +16,7 @@ namespace EnemySpace
         [SerializeField]
         private Transform player;
         public LayerMask isGround, isPlayer;
+        public float turnSpeed = 180;
 
         [Header("Patrolling Properties")]
         private Vector3 walkPoint;
