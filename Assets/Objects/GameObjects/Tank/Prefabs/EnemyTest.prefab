@@ -432,9 +432,6 @@ GameObject:
   - component: {fileID: 1164494156946566833}
   - component: {fileID: 2726159578665775627}
   - component: {fileID: 1007407944}
-  - component: {fileID: 8025282296522411945}
-  - component: {fileID: 813135663079197013}
-  - component: {fileID: 496238466383196864}
   m_Layer: 8
   m_Name: EnemyTest
   m_TagString: Enemy
@@ -489,85 +486,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &8025282296522411945
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913655709672648093}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &813135663079197013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913655709672648093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8a52993a218bf4e95a131a6d6c8c48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 141
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
---- !u!114 &496238466383196864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913655709672648093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f1a1b4e98737814abb68301ebecc204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
-  isGround:
-    serializedVersion: 2
-    m_Bits: 128
-  isPlayer:
-    serializedVersion: 2
-    m_Bits: 8
-  sightRange: 10
-  attackRange: 5
-  shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
-  firingZone: {fileID: 9044039701618893532}
-  shotTimerDelay: 3
-  cooldownTimer: 3
-  shotForce: 2000
-  tankDamage: 25
 --- !u!1 &5592387151819456919
 GameObject:
   m_ObjectHideFlags: 0

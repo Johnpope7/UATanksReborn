@@ -432,8 +432,6 @@ GameObject:
   - component: {fileID: 1164494156946566833}
   - component: {fileID: 2726159578665775627}
   - component: {fileID: 1007407944}
-  - component: {fileID: 1007407942}
-  - component: {fileID: 1007407945}
   m_Layer: 3
   m_Name: Tank
   m_TagString: Player
@@ -488,40 +486,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1007407942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913655709672648093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ead57f5d0f8d3440856226818d69ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankSpeed: 15
-  tankRotationSpeed: 100
-  turretTransform: {fileID: 409401110439938547}
-  turretLagSpeed: 7
-  reticleTransform: {fileID: 0}
-  shell: {fileID: 1144187341207838, guid: d3cda471202d69248bce52982e462e0b, type: 3}
-  firingZone: {fileID: 9044039701618893532}
-  shotForce: 2000
-  tankDamage: 25
---- !u!114 &1007407945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4913655709672648093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43fd17eea3332a4880788fe53053c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!1 &5592387151819456919
 GameObject:
   m_ObjectHideFlags: 0
